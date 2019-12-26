@@ -1,4 +1,5 @@
 import React from 'react';
+import propTypes from 'prop-types';
 
 function TechItem({ tech, onDelete }){
   return (
@@ -7,4 +8,15 @@ function TechItem({ tech, onDelete }){
       </li>
   );
 }
+
+TechItem.defaultProps = {
+  tech: 'Tech not located',
+  onDelete: 'missing Delete method',
+};
+
+TechItem.propTypes = {
+  tech: propTypes.string.isRequired,
+  onDelete: propTypes.func.isRequired,
+};
+
 export default TechItem;  
